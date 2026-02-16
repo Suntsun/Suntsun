@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="matrix.gif" width="100%" />
+  <img src="assets/matrix-rain.svg" width="100%" alt="Matrix rain header" />
 </div>
 # Mahes
 
