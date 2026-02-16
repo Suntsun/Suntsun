@@ -1,3 +1,6 @@
+<div align="center">
+  <img src="matrix.gif" width="100%" />
+</div>
 # Mahes
 
 Backend-oriented developer focused on building structured and reliable applications.
