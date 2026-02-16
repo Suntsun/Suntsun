@@ -11,9 +11,6 @@ Backend-oriented developer focused on building structured and reliable applicati
 - Comfortable with **Git, GitHub, IntelliJ, Eclipse, and VS Code**
 - Working knowledge of **Linux environments and REST API development**
 
-📫 Contact: mrm.sunsun@gmail.com
-
----
 
 ## Tech Stack
 
@@ -68,3 +65,6 @@ Linear programming and optimization models
 Supply chain and logistics modeling
 
 Discrete event simulation
+
+
+📫 Contact: mrm.sunsun@gmail.com
