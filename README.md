@@ -1,9 +1,16 @@
-<div align="center">
-  <img src="assets/matrix-rain.svg" width="100%" alt="Matrix rain header" />
-</div>
-# Mahes
+# Mahes Risciotti
 
-Backend-oriented developer focused on building structured and reliable applications.
+<div align="center" style="background:#000; padding:22px 16px; border-radius:14px; border:1px solid #333;">
+  <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+              font-size: 20px; font-weight: 800; line-height:1.4;
+              background: linear-gradient(90deg, #00ff66, #00e5ff, #ff2bd6, #ffaa00, #aa44ff);
+              -webkit-background-clip: text; background-clip: text; color: transparent;">
+    Backend-oriented developer focused on building structured and reliable applications.
+  </div>
+  <div style="margin-top:10px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+              font-size: 13px; color:#bbb;">
+  </div>
+</div>
 
 ## About Me
 
