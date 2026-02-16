@@ -44,7 +44,7 @@
   <img src="https://skillicons.dev/icons?i=docker,linux,nginx" />
 </p>
 
-🎯 Current Focus
+Current Focus
 
 I am currently orienting my professional development toward Infrastructure, Data Systems and Applied Optimization for Logistics environments.
 
