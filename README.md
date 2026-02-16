@@ -92,7 +92,7 @@
 <!--tech stack icons-->
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=java,py,mysql,postgres,git,github,docker,html,kotlin,vscode,idea,ableton,androidstudio,discord,eclipse,fastapi,gradle,linux,nginx,notion,postman,powershell,sublime,vercel," />
+    <img src="https://skillicons.dev/icons?i=java,py,mysql,postgres,git,github,docker,html,kotlin,vscode,idea,ableton,androidstudio,discord,eclipse,fastapi,gradle,linux,nginx,notion,postman,powershell,sublime,vercel" />
   </a>
 </p>
 
