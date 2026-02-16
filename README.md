@@ -92,7 +92,7 @@
 <!--tech stack icons-->
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=java,py,mysql,postgres,git,docker,html,kotlin,vscode,idea,eclipse&perline=6" />
+    <img src="https://skillicons.dev/icons?i=java,py,mysql,postgres,git,github,docker,html,kotlin,vscode,idea,ableton,androidstudio,discord,eclipse,fastapi,gradle,linux,nginx,notion,postman,powershell,sublime,vercel," />
   </a>
 </p>
 
@@ -128,6 +128,6 @@
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ----------------------------------------------------------------------
-Credit: [1010nishant](https://github.com/1010nishant)
 
-Last Edited on: 29/4/2023
+
+
