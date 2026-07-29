@@ -110,8 +110,7 @@ Capa de mando que coordina más de 15 agentes especializados con responsabilidad
 
 ## Contacto
 
-📧 **mrm.sunsun@gmail.com**
-
-<!-- TODO: añadir LinkedIn cuando el mando facilite la URL -->
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahes-sunsun-es250206)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mrm.sunsun@gmail.com)
 
 *Abierto a oportunidades en integración de IA, automatización de procesos y desarrollo backend.*
