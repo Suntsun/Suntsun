@@ -17,9 +17,7 @@ No hago demos de chatbot. Hago agentes que leen, deciden, escriben en la base de
 
 ## En qué trabajo
 
-**Agentes de IA integrados en ERP.** Once agentes verticales sobre Odoo 17, cada uno con su dominio: conciliación bancaria, pedidos B2B por WhatsApp, selección de personal, licitaciones públicas, trámites laborales, logística, gestión documental, inteligencia de mercado y control de calidad de partes de mantenimiento. No son interfaces de consulta: ejecutan acciones reales sobre el ERP —crear registros, avanzar etapas, generar y enviar documentos— bajo usuario de servicio con permisos acotados.
-
-El bucle de razonamiento y ejecución de herramientas está **implementado a mano sobre la API HTTP del modelo**, sin frameworks de agentes: definición del esquema de tools, despacho de las llamadas contra métodos del ORM, y control del ciclo. Sé lo que pasa en cada vuelta del bucle porque lo escribí.
+**Agentes de IA integrados en ERP.** Agentes verticales sobre Odoo 17, cada uno con su dominio: selección de personal, licitaciones públicas, trámites laborales ante la Seguridad Social y el SEPE, logística, inteligencia de mercado y control de calidad de partes de mantenimiento. No son interfaces de consulta: ejecutan acciones reales sobre el ERP —crear registros, avanzar etapas, generar y enviar documentos— bajo usuario de servicio con permisos acotados.
 
 **Automatización de procesos de punta a punta.** Ingesta de fuentes oficiales (sindicación ATOM/CODICE de la Plataforma de Contratación del Estado), generación de ficheros oficiales de ancho fijo byte-exactos para la Seguridad Social, integración SOAP con el SEPE, y publicación automatizada en redes sociales vía Meta Graph API orquestada con n8n.
 
@@ -49,8 +47,6 @@ Arquitectura de una flota de agentes conversacionales embebidos en Odoo que oper
 
 | Métrica | Valor |
 |---|---|
-| Agentes verticales construidos | **11**, sobre Odoo 17 |
-| Volumen de trabajo | **179 commits · ~77.500 líneas** (45.000 Python) |
 | Extracción de CVs sobre golden set adversarial | **14 casos, 0 alucinaciones** |
 | Escrituras reales verificadas en ERP | **930, sin discrepancias** |
 | Latencia tras rediseño de flujo | **90–200 s → 8,3 s de media** |
