@@ -1,10 +1,15 @@
-<img src="assets/iris.gif" width="150" align="right" alt="IRIS" />
+<p align="center">
+  <img src="assets/iris.gif" width="170" alt="IRIS" />
+</p>
 
-# Mahes Omprakash
+<h1 align="center">Mahes Omprakash</h1>
 
-### Desarrollador de integración de IA y automatización
+<p align="center">
+  <strong>Desarrollador de integración de IA y automatización</strong><br/>
+  <a href="https://suntsun.github.io">suntsun.github.io</a>
+</p>
 
-🌐 **[suntsun.github.io](https://suntsun.github.io)**
+---
 
 Experiencia en desarrollo de agentes de IA integrados en sistemas en explotación: ERP, APIs de terceros, generación de ficheros oficiales y automatización de publicación en redes.
 
