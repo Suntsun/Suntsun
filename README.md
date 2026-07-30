@@ -2,9 +2,9 @@
 
 ### Desarrollador de integración de IA y automatización
 
-Construyo sistemas donde un modelo de lenguaje **hace trabajo real** contra sistemas de producción — ERPs, APIs, ficheros oficiales, redes sociales — con las barreras de seguridad puestas en el código, no en el prompt.
+Experiencia en desarrollo de agentes de IA integrados en sistemas en explotación: ERP, APIs de terceros, generación de ficheros oficiales y automatización de publicación en redes.
 
-No hago demos de chatbot. Hago agentes que leen, deciden, escriben en la base de datos y dejan traza de lo que hicieron.
+Los agentes ejecutan acciones sobre la base de datos —crean registros, avanzan procesos, generan documentación— con permisos acotados, confirmación humana implementada en el ORM y trazabilidad de cada operación.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Odoo](https://img.shields.io/badge/Odoo-714B67?style=flat-square&logo=odoo&logoColor=white)
@@ -52,10 +52,10 @@ Arquitectura de una flota de agentes conversacionales embebidos en Odoo que oper
 | Latencia tras rediseño de flujo | **90–200 s → 8,3 s de media** |
 | Suites de test por proyecto | 625 · 511 · 300 · 94 |
 
-**Dos decisiones de diseño que defiendo en cualquier entrevista:**
+**Dos decisiones de diseño relevantes:**
 
-- **El gate humano va en el ORM, no en el prompt.** Una auditoría interna rechazó mi primera versión del control de envío porque estaba implementada como instrucción al modelo. Se reimplementó como guarda real en `create()`/`write()`. Un LLM puede ignorar una instrucción; no puede ignorar una excepción.
-- **Flujo invertido.** Quité al LLM la escritura directa sobre el ERP: ahora devuelve un veredicto JSON que el código valida y persiste de forma síncrona. Eliminó los fallos intermitentes y bajó la latencia un orden de magnitud.
+- **Confirmación humana implementada en el ORM.** Una auditoría interna rechazó la primera versión del control de envío por estar implementada como instrucción al modelo. Se reimplementó como guarda en `create()`/`write()`, donde el agente no puede saltársela.
+- **Inversión del flujo de escritura.** El modelo dejó de escribir directamente en el ERP y pasó a devolver un veredicto JSON que el código valida y persiste de forma síncrona. Resolvió los fallos intermitentes y redujo la latencia en un orden de magnitud.
 
 *Código propiedad del cliente — se documenta la arquitectura, no el fuente.*
 
@@ -85,12 +85,12 @@ Capa de mando que coordina más de 15 agentes especializados con responsabilidad
 
 ---
 
-## Cómo trabajo
+## Método de trabajo
 
-- **Evidencia antes que narración.** Si un sistema dice que escribió 930 registros, los cuento en la base de datos. He corregido más de una vez cifras propias que resultaron ser errores de agregación.
-- **Tests como parte del entregable**, no como fase posterior. Cada proyecto de arriba tiene su suite.
-- **Verificación en el entorno real.** Lo que funciona en local no está verificado; los fallos que importan aparecen en el servidor de destino.
-- **Seguridad por diseño en sistemas con IA**: permisos default-deny, human-in-the-loop implementado en código, trazabilidad completa y revisión adversarial antes de desplegar.
+- **Verificación sobre la base de datos**, no sobre el informe del propio sistema: las cifras que publico están contadas, no estimadas.
+- **Pruebas como parte del entregable**, no como fase posterior. Cada proyecto incluye su suite.
+- **Validación en el entorno de destino.** Los fallos que importan suelen aparecer en el servidor, no en local.
+- **Seguridad aplicada a sistemas con IA**: permisos denegados por defecto, confirmación humana en código, trazabilidad completa y revisión adversarial previa al despliegue.
 
 ---
 
