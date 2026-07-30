@@ -40,7 +40,7 @@ Los agentes ejecutan acciones sobre la base de datos —crean registros, avanzan
 
 26 automatizaciones bajo un REPL en lenguaje natural cuyo cerebro es un LLM **sin capacidad de ejecución directa**. El modelo solo propone `{binario, argumentos}`; una capa propia valida contra una allowlist cerrada de binarios de solo lectura, ejecuta con `shell=False`, rechaza metacaracteres, limita el lote y deja auditoría JSONL de cada intento.
 
-`Python (stdlib pura, cero dependencias)` · `systemd` · `unittest` · **349 tests verificados en ejecución**
+`Python (stdlib pura, cero dependencias)` · `systemd` · `unittest` · **440 tests en el orquestador · 1.179 en el ecosistema**
 
 **El problema interesante:** dar a un modelo de lenguaje acceso a un shell real sin abrir un vector de escalada de privilegios. Se resolvió con permisos a nivel de proceso, no de instrucción — porque a un LLM no se le pide que se porte bien, se le limita lo que puede tocar.
 
