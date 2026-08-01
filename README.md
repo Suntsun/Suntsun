@@ -113,6 +113,18 @@ Capa de mando que coordina más de 15 agentes especializados con responsabilidad
 
 ---
 
+## Conservación, ciencia y tecnología.
+
+Como iniciativa personal, me gustaría colaborar de forma voluntaria en proyectos sin ánimo de lucro relacionados con la conservación de la naturaleza, la investigación científica y la divulgación.
+
+Puedo aportar desarrollo backend, automatización de procesos, tratamiento y visualización de datos, APIs, aplicaciones web, mapas interactivos e integración de herramientas.
+
+El desarrollo se realiza sin coste, siempre que el proyecto tenga una finalidad real, no comercial y un alcance asumible. Cada propuesta se valorará según sus necesidades técnicas, utilidad y mi disponibilidad.
+
+Si formas parte de una asociación, grupo científico o iniciativa de conservación y necesitas apoyo tecnológico, puedes contactar conmigo a través de mi correo (abajo en contacto) o instagram (cuenta dedicada a proyectos de biologia): @zurtopia_
+
+---
+
 ## Contacto
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahes-sunsun-es250206)
