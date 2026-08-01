@@ -117,7 +117,7 @@ Capa de mando que coordina más de 15 agentes especializados con responsabilidad
 
 ## Conservación, ciencia y tecnología.
 
-Como iniciativa personal, me gustaría colaborar de forma voluntaria en proyectos sin ánimo de lucro relacionados con la conservación de la naturaleza, la investigación científica y la divulgación.
+Como iniciativa personal, colaboro de forma voluntaria en proyectos sin ánimo de lucro relacionados con la conservación de la naturaleza, la investigación científica y la divulgación.
 
 Puedo aportar desarrollo backend, automatización de procesos, tratamiento y visualización de datos, APIs, aplicaciones web, mapas interactivos e integración de herramientas.
 
