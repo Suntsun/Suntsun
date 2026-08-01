@@ -24,13 +24,10 @@ Los agentes ejecutan acciones sobre la base de datos —crean registros, avanzan
 
 ---
 
-## En qué trabajo
+## Que hago ?
 
-**Agentes de IA integrados en ERP.** Agentes verticales sobre Odoo 17, cada uno con su dominio: selección de personal, licitaciones públicas, trámites laborales ante la Seguridad Social y el SEPE, logística, inteligencia de mercado y control de calidad de partes de mantenimiento. No son interfaces de consulta: ejecutan acciones reales sobre el ERP —crear registros, avanzar etapas, generar y enviar documentos— bajo usuario de servicio con permisos acotados.
-
-**Automatización de procesos de punta a punta.** Ingesta de fuentes oficiales (sindicación ATOM/CODICE de la Plataforma de Contratación del Estado), generación de ficheros oficiales de ancho fijo byte-exactos para la Seguridad Social, integración SOAP con el SEPE, y publicación automatizada en redes sociales vía Meta Graph API orquestada con n8n.
-
-**Infraestructura propia de trabajo.** Un sistema multiagente jerárquico con constitución escrita y memoria persistente, y una suite de 26 automatizaciones Linux gobernada por un orquestador conversacional con modelo de permisos default-deny.
+Integro agentes de IA y automatizaciones en sistemas reales.
+Trabajo principalmente con Python, Odoo, PostgreSQL, n8n y Linux.
 
 ---
 
@@ -38,49 +35,54 @@ Los agentes ejecutan acciones sobre la base de datos —crean registros, avanzan
 
 ### 🏰 El Castillo — automatizaciones Linux con orquestador conversacional gobernado
 
-26 automatizaciones bajo un REPL en lenguaje natural cuyo cerebro es un LLM **sin capacidad de ejecución directa**. El modelo solo propone `{binario, argumentos}`; una capa propia valida contra una allowlist cerrada de binarios de solo lectura, ejecuta con `shell=False`, rechaza metacaracteres, limita el lote y deja auditoría JSONL de cada intento.
+Sistema de 26 automatizaciones controladas mediante lenguaje natural. El LLM no puede ejecutar comandos directamente: únicamente propone {binario, argumentos} y una capa independiente valida cada petición contra una lista cerrada de comandos permitidos.
 
-`Python (stdlib pura, cero dependencias)` · `systemd` · `unittest` · **440 tests en el orquestador · 1.179 en el ecosistema**
+La ejecución utiliza shell=False, rechaza metacaracteres, limita el número de operaciones y registra cada intento en una auditoría JSONL.
 
-**El problema interesante:** dar a un modelo de lenguaje acceso a un shell real sin abrir un vector de escalada de privilegios. Se resolvió con permisos a nivel de proceso, no de instrucción — porque a un LLM no se le pide que se porte bien, se le limita lo que puede tocar.
+Python — stdlib pura · systemd · unittest
+440 tests en el orquestador · 1.179 tests en el ecosistema
 
-<!-- TODO: enlace al repo cuando se cree -->
+Problema principal: permitir que un modelo de lenguaje interactúe con un sistema Linux real sin abrir una vía de escalada de privilegios. La seguridad se aplica a nivel de proceso y permisos, no mediante instrucciones en el prompt.
+
+[Ver repositorio](https://github.com/Suntsun/el-castillo)
 
 ---
 
 ### 🤖 Agentes de IA sobre ERP — caso de estudio
 
-Arquitectura de una flota de agentes conversacionales embebidos en Odoo que operan el ERP de verdad. Patrón común: modelos de datos propios, skills de dominio, usuario de servicio con permisos explícitos y cierre documental trazable.
+Arquitectura de una flota de agentes conversacionales integrados en Odoo que ejecutan operaciones reales sobre el ERP. Comparten un patrón común: modelos de datos propios, capacidades de dominio, usuario de servicio con permisos explícitos y trazabilidad documental.
 
-**Resultados medidos:**
+Resultados medidos:
 
-| Métrica | Valor |
-|---|---|
-| Extracción de CVs sobre golden set adversarial | **14 casos, 0 alucinaciones** |
-| Escrituras reales verificadas en ERP | **930, sin discrepancias** |
-| Latencia tras rediseño de flujo | **90–200 s → 8,3 s de media** |
-| Suites de test por proyecto | 625 · 511 · 300 · 94 |
+Métrica	Valor
+Extracción de CVs sobre golden set adversarial	14 casos, 0 alucinaciones
+Escrituras verificadas directamente en el ERP	930, sin discrepancias
+Latencia tras el rediseño del flujo	90–200 s → 8,3 s de media
+Tests por proyecto	625 · 511 · 300 · 94
 
-**Dos decisiones de diseño relevantes:**
+Decisiones de diseño relevantes:
 
-- **Confirmación humana implementada en el ORM.** Una auditoría interna rechazó la primera versión del control de envío por estar implementada como instrucción al modelo. Se reimplementó como guarda en `create()`/`write()`, donde el agente no puede saltársela.
-- **Inversión del flujo de escritura.** El modelo dejó de escribir directamente en el ERP y pasó a devolver un veredicto JSON que el código valida y persiste de forma síncrona. Resolvió los fallos intermitentes y redujo la latencia en un orden de magnitud.
+Confirmación humana en el ORM. La primera versión controlaba los envíos mediante instrucciones al modelo. Tras una auditoría interna, el control se trasladó a guardas en create() y write(), donde el agente no puede eludirlo.
+Inversión del flujo de escritura. El modelo dejó de modificar directamente el ERP y pasó a devolver un veredicto JSON. El código valida ese resultado y realiza la persistencia de forma síncrona, eliminando fallos intermitentes y reduciendo la latencia en un orden de magnitud.
 
-*Código propiedad del cliente — se documenta la arquitectura, no el fuente.*
-
-<!-- TODO: enlace al repo cuando se cree -->
+El código pertenece al cliente. Se documentan la arquitectura, las decisiones técnicas y los resultados, pero no el código fuente.
 
 ---
 
 ### 🎬 IRIS — pipeline de contenido automatizado
 
-De una petición en lenguaje natural a una publicación real en Instagram: guion, vídeo con avatar y voz sintética, subtitulado, b-roll, aprobación humana y publicación. Odoo como hub, n8n como capa de integración (95+ nodos), y un runner de post-producción propio en VPS con ejecución en sandbox.
+Pipeline de publicación que transforma una petición en lenguaje natural en una publicación real para Instagram: generación de guion, vídeo con avatar y voz sintética, subtitulado, incorporación de b-roll, aprobación humana y publicación final.
 
-**Verificado de punta a punta con publicaciones reales en Instagram.**
+Odoo actúa como núcleo del sistema, n8n como capa de integración con más de 95 nodos y un runner propio en VPS ejecuta la postproducción dentro de un entorno aislado mediante bwrap.
 
-Lo que más me enseñó: el sandbox de ejecución (`bwrap`) se comprobó **en el servidor real, no en local** — y ahí aparecieron dos fallos que en local no se veían y habrían dejado el sistema inoperante en silencio. Y un sistema de 7 puertas de validación para que un vídeo generado automáticamente no pueda mostrar jamás una cifra inventada, incluyendo comprobación por OCR del render final.
+Verificado de punta a punta con publicaciones reales en Instagram.
 
-<!-- TODO: enlace al repo cuando se cree -->
+Decisiones técnicas relevantes:
+
+Validación en el entorno real. El sandbox se comprobó directamente en el servidor de producción, donde aparecieron dos fallos que no se reproducían en local y podían dejar el pipeline bloqueado sin una señal clara.
+Control de contenido generado. El sistema incorpora siete puertas de validación para impedir la publicación de cifras no verificadas, incluida una comprobación mediante OCR sobre el render final.
+
+[Ver repositorio](https://github.com/Suntsun/iris-pipeline-contenido)
 
 ---
 
@@ -90,7 +92,7 @@ Capa de mando que coordina más de 15 agentes especializados con responsabilidad
 
 **Por qué importa:** el patrón de auditoría cruzada detectó repetidamente defectos que una sola pasada de desarrollo no habría capturado — gates de seguridad implementados solo en el prompt, éxitos falsos reportados al usuario, timeouts mal calibrados.
 
-<!-- TODO: enlace al repo cuando se cree -->
+
 
 ---
 
