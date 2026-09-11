@@ -9,6 +9,13 @@
   <a href="https://suntsun.github.io">suntsun.github.io</a>
 </p>
 
+<p align="center">
+  <strong>Español</strong> ·
+  <a href="https://github.com/Suntsun/Suntsun/blob/main/README.en.md">English</a> ·
+  <a href="https://github.com/Suntsun/Suntsun/blob/main/README.it.md">Italiano</a> ·
+  <a href="https://github.com/Suntsun/Suntsun/blob/main/README.de.md">Deutsch</a>
+</p>
+
 ---
 
 Experiencia en desarrollo de agentes de IA integrados en sistemas en explotación: ERP, APIs de terceros, generación de ficheros oficiales y automatización de publicación en redes.
@@ -24,7 +31,7 @@ Los agentes ejecutan acciones sobre la base de datos —crean registros, avanzan
 
 ---
 
-## Que hago ?
+## ¿Qué hago?
 
 Integro agentes de IA y automatizaciones en sistemas reales.
 Trabajo principalmente con Python, Odoo, PostgreSQL, n8n y Linux.
@@ -54,16 +61,17 @@ Arquitectura de una flota de agentes conversacionales integrados en Odoo que eje
 
 Resultados medidos:
 
-Métrica	Valor
-Extracción de CVs sobre golden set adversarial	14 casos, 0 alucinaciones
-Escrituras verificadas directamente en el ERP	930, sin discrepancias
-Latencia tras el rediseño del flujo	90–200 s → 8,3 s de media
-Tests por proyecto	625 · 511 · 300 · 94
+| Métrica | Valor |
+| --- | --- |
+| Extracción de CVs sobre golden set adversarial | 14 casos, 0 alucinaciones |
+| Escrituras verificadas directamente en el ERP | 930, sin discrepancias |
+| Latencia tras el rediseño del flujo | 90–200 s → 8,3 s de media |
+| Tests por proyecto | 625 · 511 · 300 · 94 |
 
 Decisiones de diseño relevantes:
 
-Confirmación humana en el ORM. La primera versión controlaba los envíos mediante instrucciones al modelo. Tras una auditoría interna, el control se trasladó a guardas en create() y write(), donde el agente no puede eludirlo.
-Inversión del flujo de escritura. El modelo dejó de modificar directamente el ERP y pasó a devolver un veredicto JSON. El código valida ese resultado y realiza la persistencia de forma síncrona, eliminando fallos intermitentes y reduciendo la latencia en un orden de magnitud.
+- **Confirmación humana en el ORM.** La primera versión controlaba los envíos mediante instrucciones al modelo. Tras una auditoría interna, el control se trasladó a guardas en `create()` y `write()`, donde el agente no puede eludirlo.
+- **Inversión del flujo de escritura.** El modelo dejó de modificar directamente el ERP y pasó a devolver un veredicto JSON. El código valida ese resultado y realiza la persistencia de forma síncrona, eliminando fallos intermitentes y reduciendo la latencia en un orden de magnitud.
 
 El código pertenece al cliente. Se documentan la arquitectura, las decisiones técnicas y los resultados, pero no el código fuente.
 
@@ -79,8 +87,8 @@ Verificado de punta a punta con publicaciones reales en Instagram.
 
 Decisiones técnicas relevantes:
 
-Validación en el entorno real. El sandbox se comprobó directamente en el servidor de producción, donde aparecieron dos fallos que no se reproducían en local y podían dejar el pipeline bloqueado sin una señal clara.
-Control de contenido generado. El sistema incorpora siete puertas de validación para impedir la publicación de cifras no verificadas, incluida una comprobación mediante OCR sobre el render final.
+- **Validación en el entorno real.** El sandbox se comprobó directamente en el servidor de producción, donde aparecieron dos fallos que no se reproducían en local y podían dejar el pipeline bloqueado sin una señal clara.
+- **Control de contenido generado.** El sistema incorpora siete puertas de validación para impedir la publicación de cifras no verificadas, incluida una comprobación mediante OCR sobre el render final.
 
 [Ver repositorio](https://github.com/Suntsun/iris-pipeline-contenido)
 
@@ -91,8 +99,6 @@ Control de contenido generado. El sistema incorpora siete puertas de validación
 Capa de mando que coordina más de 15 agentes especializados con responsabilidad única: uno construye, otro prueba como usuario real, otro audita de forma adversarial, otro revisa el diff. Gobernado por una constitución escrita y una memoria persistente en Markdown con un único agente autorizado a escribir en ella.
 
 **Por qué importa:** el patrón de auditoría cruzada detectó repetidamente defectos que una sola pasada de desarrollo no habría capturado — gates de seguridad implementados solo en el prompt, éxitos falsos reportados al usuario, timeouts mal calibrados.
-
-
 
 ---
 
@@ -115,7 +121,7 @@ Capa de mando que coordina más de 15 agentes especializados con responsabilidad
 
 ---
 
-## Conservación, ciencia y tecnología.
+## Conservación, ciencia y tecnología
 
 Como iniciativa personal, colaboro de forma voluntaria en proyectos sin ánimo de lucro relacionados con la conservación de la naturaleza, la investigación científica y la divulgación.
 
@@ -123,7 +129,7 @@ Puedo aportar desarrollo backend, automatización de procesos, tratamiento y vis
 
 El desarrollo se realiza sin coste, siempre que el proyecto tenga una finalidad real, no comercial y un alcance asumible. Cada propuesta se valorará según sus necesidades técnicas, utilidad y mi disponibilidad.
 
-Si formas parte de una asociación, grupo científico o iniciativa de conservación y necesitas apoyo tecnológico, puedes contactar conmigo a través de mi correo (abajo en contacto) o instagram (cuenta dedicada a proyectos de biologia): @zurtopia_
+Si formas parte de una asociación, grupo científico o iniciativa de conservación y necesitas apoyo tecnológico, puedes contactar conmigo a través de mi correo (abajo en contacto) o Instagram (cuenta dedicada a proyectos de biología): @zurtopia_
 
 ---
 
