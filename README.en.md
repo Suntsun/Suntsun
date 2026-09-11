@@ -85,7 +85,9 @@ It is governed by a written constitution (hard rules) and a persistent memory (c
 
 This is not just an orchestration system: it is the backbone of how I work.
 
-With it I keep hallucination in AI-assisted development below 10% and stop token consumption from running away. Anthropic themselves point to agent orchestration as the design pattern that makes development efficient and properly supervised.
+In practice, each agent works only with the context of its own task instead of dragging the whole conversation along, and no piece of work is accepted without passing through a unit that did not write it. That keeps the cost down and avoids stacking fixes on top of a mistake nobody caught in time.
+
+It is the same argument made by Anthropic's Applied AI team: [in a production system, the limiting factor is no longer the model but the structure wrapped around it](https://www.youtube.com/watch?v=K0X9QDRkIdg).
 
 ---
 

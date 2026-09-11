@@ -85,7 +85,9 @@ Un livello di comando che coordina più di 15 agenti specializzati, ciascuno con
 
 Non è soltanto un sistema di orchestrazione: è l'ossatura del mio metodo di lavoro.
 
-Con esso mantengo le allucinazioni nello sviluppo assistito sotto il 10% ed evito che il consumo di token esploda. La stessa Anthropic indica l'orchestrazione di agenti come lo schema di progettazione che rende lo sviluppo efficiente e realmente supervisionato.
+In concreto, ogni agente lavora solo con il contesto del proprio compito invece di trascinarsi dietro l'intera conversazione, e nessun lavoro viene dato per buono senza passare da un'unità che non l'ha scritto. Questo contiene la spesa ed evita di accumulare correzioni sopra un errore che nessuno ha intercettato in tempo.
+
+È lo stesso argomento sostenuto dal team Applied AI di Anthropic: [in un sistema in produzione il fattore limitante non è più il modello, ma la struttura che lo avvolge](https://www.youtube.com/watch?v=K0X9QDRkIdg).
 
 ---
 

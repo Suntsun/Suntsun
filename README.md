@@ -85,7 +85,9 @@ Se gobierna con una constitución escrita (hard rules) y una memoria persistente
 
 Esto no es solo un sistema de orquestación: es el soporte de mi metodología de trabajo.
 
-Con él mantengo la alucinación del desarrollo asistido por debajo del 10% y evito que el consumo de tokens se dispare. La propia Anthropic señala la orquestación de agentes como el patrón de diseño que permite un desarrollo eficiente y supervisado.
+En la práctica, cada agente trabaja solo con el contexto de su tarea en lugar de arrastrar la conversación entera, y ningún trabajo se da por bueno sin pasar por una unidad que no lo escribió. Eso contiene el gasto y evita encadenar correcciones sobre un error que nadie revisó a tiempo.
+
+Es el mismo argumento que defiende el equipo de Applied AI de Anthropic: [en un sistema en producción, el límite ya no lo pone el modelo, sino la estructura que lo rodea](https://www.youtube.com/watch?v=K0X9QDRkIdg).
 
 ---
 

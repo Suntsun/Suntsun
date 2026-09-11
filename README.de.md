@@ -85,7 +85,9 @@ Geregelt wird sie durch eine geschriebene Verfassung (Hard Rules) und einen pers
 
 Das ist nicht bloß ein Orchestrierungssystem: Es ist das Rückgrat meiner Arbeitsweise.
 
-Damit halte ich die Halluzinationsrate in der KI-gestützten Entwicklung unter 10% und verhindere, dass der Token-Verbrauch aus dem Ruder läuft. Anthropic selbst benennt die Orchestrierung von Agenten als das Entwurfsmuster, das eine effiziente und wirklich kontrollierte Entwicklung ermöglicht.
+Praktisch heißt das: Jeder Agent arbeitet nur mit dem Kontext seiner eigenen Aufgabe, statt das gesamte Gespräch mitzuschleppen, und kein Arbeitsergebnis gilt als fertig, ohne eine Einheit durchlaufen zu haben, die es nicht selbst geschrieben hat. Das hält die Kosten im Rahmen und verhindert, dass sich Korrekturen auf einem Fehler stapeln, den niemand rechtzeitig bemerkt hat.
+
+Es ist dasselbe Argument, das das Applied-AI-Team von Anthropic vertritt: [in einem Produktivsystem ist nicht mehr das Modell der begrenzende Faktor, sondern die Struktur, die es umgibt](https://www.youtube.com/watch?v=K0X9QDRkIdg).
 
 ---
 
