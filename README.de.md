@@ -18,77 +18,59 @@
 
 ---
 
-Erfahrung in der Entwicklung von KI-Agenten, die in produktiv laufende Systeme integriert sind: ERP-Systeme, Drittanbieter-APIs, Erzeugung amtlicher Dateien und automatisiertes Veröffentlichen in sozialen Netzwerken.
+Erfahrung mit Lösungen der Künstlichen Intelligenz für Unternehmen im laufenden Betrieb: **Agentic-AI**-Systeme, Integration und Orchestrierung von **LLMs**, **RAG**-Architekturen, Prozessautomatisierung, **API**-Entwicklung, Anpassung von **ERP-Systemen** und Automatisierung für **Social Media**.
 
-Die Agenten führen reale Aktionen auf der Datenbank aus — sie legen Datensätze an, treiben Prozesse voran, erzeugen Dokumentation — mit eng gefassten Berechtigungen, menschlicher Bestätigung auf ORM-Ebene und vollständiger Nachvollziehbarkeit jeder Operation.
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Odoo](https://img.shields.io/badge/Odoo-714B67?style=flat-square&logo=odoo&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![Odoo](https://img.shields.io/badge/Odoo-714B67?style=flat-square&logo=odoo&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) ![SQL](https://img.shields.io/badge/SQL-003B57?style=flat-square&logo=databricks&logoColor=white) ![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Claude Code](https://img.shields.io/badge/Claude%20Code-D97757?style=flat-square&logo=claude&logoColor=white) ![Groq](https://img.shields.io/badge/Groq-F55036?style=flat-square&logo=groq&logoColor=white) ![Llama](https://img.shields.io/badge/Llama-0866FF?style=flat-square&logo=meta&logoColor=white) ![Qwen](https://img.shields.io/badge/Qwen-615CED?style=flat-square&logo=alibabacloud&logoColor=white) ![Mistral](https://img.shields.io/badge/Mistral-FA520F?style=flat-square&logo=mistralai&logoColor=white) ![Obsidian](https://img.shields.io/badge/Obsidian-7C3AED?style=flat-square&logo=obsidian&logoColor=white)
 
 ---
-
-## Was ich mache
-
-Ich integriere KI-Agenten und Automatisierungen in reale, laufende Systeme.
-Ich arbeite überwiegend mit Python, Odoo, PostgreSQL, n8n und Linux.
-
----
-
 ## Ausgewählte Projekte
 
-### 🏰 El Castillo — Linux-Automatisierung mit kontrolliertem dialogfähigem Orchestrator
+### 🏰 El Castillo — Systemassistent mit abgeriegelten Berechtigungen
 
-System aus 26 Automatisierungen, gesteuert über natürliche Sprache. Das LLM kann keine Befehle direkt ausführen: Es schlägt lediglich {Binary, Argumente} vor, und eine unabhängige Schicht prüft jede Anfrage gegen eine geschlossene Liste zulässiger Befehle.
+Ein Assistent, mit dem ich in natürlicher Sprache 26 Automatisierungen auf meinem eigenen Linux-Rechner steuere.
 
-Die Ausführung nutzt shell=False, weist Metazeichen ab, begrenzt die Anzahl der Operationen und protokolliert jeden Versuch in einem JSONL-Audit-Log.
+Interessant ist, was er **nicht** kann. Das Modell führt nie etwas von sich aus aus: Es schlägt lediglich vor, was es starten möchte, und eine unabhängige Schicht — von Hand geschrieben, ohne KI — prüft diesen Vorschlag gegen eine geschlossene Liste erlaubter Operationen. Was nicht auf der Liste steht, wird abgewiesen. Jeder Versuch, zugelassen oder abgelehnt, wird protokolliert.
 
-Python — reine Standardbibliothek · systemd · unittest
-440 Tests im Orchestrator · 1.179 Tests im gesamten Ökosystem
+Das eigentliche Problem: ein Modell an ein reales Betriebssystem zu lassen, ohne ihm die Kontrolle über die Maschine zu schenken. Die Lösung war, nach Ebenen zu trennen, was jeder Teil darf, heikle Operationen über einen eigenen Pfad zu führen und alles, was dort durchläuft, automatisch zu kennzeichnen. Sicherheit steckt in den Berechtigungen des Systems, nicht in einer Anweisung im Prompt: Einen Prompt kann man überreden, eine verweigerte Berechtigung nicht.
 
-Kernproblem: einem Sprachmodell die Interaktion mit einem realen Linux-System zu erlauben, ohne einen Pfad zur Rechteausweitung zu öffnen. Sicherheit wird auf Prozess- und Berechtigungsebene durchgesetzt, nicht über Anweisungen im Prompt.
+Das Muster hängt nicht an Linux: Hier läuft es auf meinem Rechner, funktioniert aber für jedes System. Es erlaubt, größeren oder leistungsfähigeren Modellen wie Claude oder Codex klare Grenzen und Handlungsräume zu setzen.
+
+Python mit reiner Standardbibliothek · 440 Tests im Orchestrator · 1.179 im gesamten Ökosystem
 
 [Repository ansehen](https://github.com/Suntsun/el-castillo)
 
 ---
 
-### 🤖 KI-Agenten auf einem ERP — Fallstudie
+### 🤖 Eine Flotte von KI-Agenten auf einem ERP — Fallstudie
 
-Architektur einer Flotte dialogfähiger Agenten, die in Odoo eingebettet sind und reale Operationen im ERP ausführen. Sie folgen einem gemeinsamen Muster: eigene Datenmodelle, fachliche Fähigkeiten, ein Servicebenutzer mit expliziten Berechtigungen und dokumentenbasierte Nachvollziehbarkeit.
+Sieben dialogfähige Agenten, die innerhalb von Odoo leben:
 
-Gemessene Ergebnisse:
+- **Sara — Personalwesen.** Nimmt Bewerbungen per E-Mail, WhatsApp und Webformular entgegen, extrahiert die Daten aus dem Lebenslauf, prüft sie gegen die Anforderungen der Stelle und terminiert die Vorstellungsgespräche.
+- **Emilio — Personaladministration.** An- und Abmeldungen bei der Sozialversicherung, Erzeugung der amtlichen Meldedateien und Übermittlung der Arbeitsverträge an die Arbeitsverwaltung.
+- **Lara — Business Intelligence.** Beobachtet Amtsblätter und Presse — Handelsregister, öffentliche Vergaben, Fördermittel — und meldet, was das Geschäft betrifft. Nach Branche der jeweiligen Firma konfigurierbar.
+- **Smith — Ausschreibungen.** Verfolgt öffentliche Vergabeverfahren, sortiert nach objektiven Kriterien aus, was nicht passt, und bereitet die Angebotsunterlagen vor.
+- **Lia — Logistik.** Bestände, Lieferrouten, Frachtführer, Servicekennzahlen des Lagers und Echtzeitüberwachung der unterwegs befindlichen Flotte auf einer Karte.
+- **Samy — Vertrieb.** CRM-Pipeline, Priorisierung von Opportunities, Hinweis auf abkühlende Abschlüsse und Nachverfolgung der Zahlungseingänge.
+- **Marina — Technische Instandhaltung.** Anlagen der Wasseraufbereitung: Arbeitsberichte im Außendienst und technischer Kundendienst.
 
-| Kennzahl | Wert |
-| --- | --- |
-| Lebenslauf-Extraktion gegen ein adversariales Golden Set | 14 Fälle, 0 Halluzinationen |
-| Direkt im ERP verifizierte Schreibvorgänge | 930, ohne Abweichungen |
-| Latenz nach dem Redesign des Ablaufs | 90–200 s → 8,3 s im Mittel |
-| Tests pro Projekt | 625 · 511 · 300 · 94 |
+Zwei Entscheidungen, die das Projekt verändert haben:
 
-Wesentliche Designentscheidungen:
+- **Die menschliche Bestätigung steckt im Code, nicht im Prompt.** Anfangs bat ich das Modell schlicht darum, nichts ohne Freigabe zu verschicken. Ein internes Audit machte klar, dass das nicht reicht: Die Prüfung sitzt jetzt an der Stelle, an der das ERP die Daten schreibt, und der Agent kommt nicht daran vorbei, so sehr man ihn auch drängt.
+- **Der Agent schlägt vor, der Code entscheidet.** Ich habe dem Modell das direkte Schreiben ins ERP entzogen. Es liefert nun sein Ergebnis, der Code validiert es, und der Code ist es, der speichert. Die sporadischen Fehler verschwanden, und der Vorgang ging von Minuten auf Sekunden zurück.
 
-- **Menschliche Bestätigung auf ORM-Ebene.** Die erste Version steuerte ausgehende Aktionen über Anweisungen an das Modell. Nach einem internen Audit wurde die Kontrolle in Guards in `create()` und `write()` verlagert, wo der Agent sie nicht umgehen kann.
-- **Umkehrung des Schreibflusses.** Das Modell verändert das ERP nicht mehr direkt, sondern liefert ein JSON-Urteil zurück. Der Code validiert dieses Ergebnis und schreibt synchron, wodurch sporadische Fehler entfielen und die Latenz um eine Größenordnung sank.
-
-Der Quellcode gehört dem Kunden. Dokumentiert werden Architektur, technische Entscheidungen und Ergebnisse, nicht jedoch der Quellcode.
+Der Quellcode gehört dem Kunden. Ich dokumentiere die Architektur, die technischen Entscheidungen und die Ergebnisse, nicht jedoch den Quellcode.
 
 ---
 
-### 🎬 IRIS — automatisierte Content-Pipeline
+### 🎬 IRIS — Agent für Content-Erstellung per Chat
 
-Publishing-Pipeline, die eine Anfrage in natürlicher Sprache in einen realen Instagram-Beitrag überführt: Skripterstellung, Video mit Avatar und synthetischer Stimme, Untertitelung, Einbindung von B-Roll, menschliche Freigabe und finale Veröffentlichung.
+Ein in Odoo eingebetteter Agent, mit dem man über einen Chat spricht. Man bittet ihn um einen Beitrag, und er erledigt den Rest: Er schreibt das Skript, erzeugt das Video mit synthetischem Avatar und synthetischer Stimme, untertitelt es, fügt das B-Roll-Material hinzu, legt es zur Freigabe vor und veröffentlicht es auf Instagram.
 
-Odoo bildet den Kern des Systems, n8n die Integrationsschicht mit über 95 Nodes, und ein eigener Runner auf einem VPS führt die Postproduktion in einer über bwrap isolierten Umgebung aus.
+Odoo ist der Kern, n8n die Integrationsschicht mit über 95 Nodes, und ein eigener Server übernimmt die Postproduktion in einer isolierten Umgebung.
 
-Ende-zu-Ende verifiziert mit realen Veröffentlichungen auf Instagram.
+Ende-zu-Ende verifiziert mit realen Veröffentlichungen.
 
-Wesentliche technische Entscheidungen:
-
-- **Validierung in der realen Umgebung.** Die Sandbox wurde direkt auf dem Produktionsserver geprüft, wo zwei Fehler auftraten, die sich lokal nicht reproduzieren ließen und die Pipeline ohne klares Signal blockieren konnten.
-- **Kontrolle generierter Inhalte.** Das System enthält sieben Validierungs-Gates, die die Veröffentlichung nicht verifizierter Zahlen verhindern, einschließlich einer OCR-Prüfung des finalen Renderings.
+**Kontrolle darüber, was veröffentlicht wird.** Sieben Prüfungen verhindern, dass eine unbestätigte Zahl nach außen geht — einschließlich einer OCR-Auswertung des fertig montierten Videos.
 
 [Repository ansehen](https://github.com/Suntsun/iris-pipeline-contenido)
 
@@ -96,18 +78,24 @@ Wesentliche technische Entscheidungen:
 
 ### ⚙️ System Captain — Multi-Agenten-Orchestrierung
 
-Eine Steuerungsebene, die mehr als 15 spezialisierte Agenten mit jeweils einer einzigen Verantwortung koordiniert: einer baut, einer testet als realer Nutzer, einer auditiert adversarial, einer prüft das Diff. Geregelt durch eine geschriebene Verfassung und einen persistenten Markdown-Speicher, in den nur ein einziger Agent schreiben darf.
+Eine Steuerungsebene, die mehr als 15 spezialisierte Agenten koordiniert, jeder mit genau einer Verantwortung: Einer baut, einer testet als realer Nutzer, einer auditiert auf der Suche nach Fehlern, einer prüft den Code.
+Geregelt wird sie durch eine geschriebene Verfassung (Hard Rules) und einen persistenten Speicher (Contextual RAG), in den nur ein einziger Agent schreiben darf.
 
-**Warum das zählt:** Das Muster der gegenseitigen Prüfung deckte wiederholt Mängel auf, die ein einzelner Entwicklungsdurchlauf nicht erfasst hätte — Sicherheits-Gates, die nur im Prompt umgesetzt waren, fälschlich gemeldete Erfolge, falsch kalibrierte Timeouts.
+**Warum das zählt:** Die gegenseitige Prüfung fand immer wieder Mängel, die ein einzelner Entwicklungsdurchlauf durchgelassen hätte — Sicherheitskontrollen, die nur im Prompt existierten, fälschlich gemeldete Erfolge, falsch kalibrierte Timeouts.
+
+Das ist nicht bloß ein Orchestrierungssystem: Es ist das Rückgrat meiner Arbeitsweise.
+
+Damit halte ich die Halluzinationsrate in der KI-gestützten Entwicklung unter 10% und verhindere, dass der Token-Verbrauch aus dem Ruder läuft. Anthropic selbst benennt die Orchestrierung von Agenten als das Entwurfsmuster, das eine effiziente und wirklich kontrollierte Entwicklung ermöglicht.
 
 ---
 
 ## Arbeitsweise
 
-- **Verifikation gegen die Datenbank**, nicht gegen den Bericht des Systems selbst: Die Zahlen, die ich veröffentliche, sind gezählt, nicht geschätzt.
-- **Tests als Teil des Liefergegenstands**, nicht als nachgelagerte Phase. Jedes Projekt bringt seine Suite mit.
-- **Validierung in der Zielumgebung.** Die Fehler, auf die es ankommt, treten meist auf dem Server auf, nicht lokal.
-- **Sicherheit für KI-gestützte Systeme**: Berechtigungen standardmäßig verweigert, menschliche Bestätigung im Code verankert, vollständige Nachvollziehbarkeit und adversariale Prüfung vor dem Deployment.
+Ich arbeite modular, mit Skalierbarkeit als Regel: Jedes Teil muss wachsen oder ersetzt werden können, ohne den Rest mitzureißen.
+
+Bevor ich ein Projekt abschließe, führe ich Funktions-Audits und Sicherheitstests durch und liefere sie als abschließenden Teil der Arbeit mit.
+
+Die Aufzeichnungen zu jedem Projekt pflege ich in eigenen Datenbanken, mit einem eigenen RAG-System, das ich während der Entwicklung abfrage. Ins Repository wandert das Ergebnis; das Wissen des Projekts bleibt geordnet und für das nächste verfügbar.
 
 ---
 
@@ -116,8 +104,8 @@ Eine Steuerungsebene, die mehr als 15 spezialisierte Agenten mit jeweils einer e
 **Sprachen** · Python · Java · SQL · Bash
 **Plattformen** · Odoo (Modelle, ORM, QWeb, OWL) · PostgreSQL · n8n · systemd
 **Integration** · XML-RPC · REST · SOAP · Webhooks · Meta Graph API · amtliche Dateien mit fester Satzlänge
-**Angewandte KI** · LLM-basierte Agenten · Function Calling und validierte JSON-Abläufe · RAG und Dokumentenextraktion · Halluzinationskontrolle mit Golden Sets
-**Systeme** · Linux (Arch/Hyprland) · Docker · Sandboxing mit bwrap · CI/CD
+**Angewandte KI** · Claude Code · LLM-basierte Agenten (Llama, Qwen, Mistral, über Groq und lokale Modelle) · Function Calling und validierte JSON-Abläufe · RAG und Dokumentenextraktion · Halluzinationskontrolle mit Golden Sets
+**Werkzeuge** · Obsidian als Wissensbasis · Linux (Arch/Hyprland) · Docker · Sandboxing mit bwrap · CI/CD
 
 ---
 
@@ -129,13 +117,12 @@ Ich kann Backend-Entwicklung, Prozessautomatisierung, Datenverarbeitung und -vis
 
 Die Entwicklung erfolgt kostenlos, sofern das Projekt einen echten, nicht kommerziellen Zweck und einen tragbaren Umfang hat. Jeder Vorschlag wird nach technischem Bedarf, Nutzen und meiner Verfügbarkeit bewertet.
 
-Wenn Sie Teil eines Vereins, einer Forschungsgruppe oder einer Naturschutzinitiative sind und technische Unterstützung benötigen, erreichen Sie mich per E-Mail (siehe Kontakt unten) oder über Instagram (Konto für Biologieprojekte): @zurtopia_
+Wenn Sie Teil eines Vereins, einer Forschungsgruppe oder einer Naturschutzinitiative sind und technische Unterstützung brauchen, schreiben Sie mir gern an die unten genannte Kontaktadresse.
 
 ---
 
 ## Kontakt
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahes-sunsun-es250206)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mrm.sunsun@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mahes-sunsun-es250206) [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mrm.sunsun@gmail.com)
 
 *Offen für Möglichkeiten in KI-Integration, Prozessautomatisierung und Backend-Entwicklung.*
