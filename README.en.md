@@ -104,9 +104,13 @@ I keep the record of every project in my own databases, with a RAG system of my 
 ## Stack
 
 **Languages** · Python · Java · SQL · Bash
+
 **Platforms** · Odoo (models, ORM, QWeb, OWL) · PostgreSQL · n8n · systemd
+
 **Integration** · XML-RPC · REST · SOAP · Webhooks · Meta Graph API · fixed-width regulatory files
+
 **Applied AI** · Claude Code · LLM-based agents (Llama, Qwen, Mistral, via Groq and local models) · function calling and validated JSON flows · RAG and document extraction · hallucination control with golden sets
+
 **Tools** · Obsidian as a knowledge base · Linux (Arch/Hyprland) · Docker · sandboxing with bwrap · CI/CD
 
 ---
