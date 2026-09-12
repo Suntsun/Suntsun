@@ -104,9 +104,13 @@ Mantengo el registro de cada proyecto en mis propias bases de datos, con un sist
 ## Stack
 
 **Lenguajes** · Python · Java · SQL · Bash
+
 **Plataformas** · Odoo (modelos, ORM, QWeb, OWL) · PostgreSQL · n8n · systemd
+
 **Integración** · XML-RPC · REST · SOAP · Webhooks · Meta Graph API · ficheros oficiales de ancho fijo
+
 **IA aplicada** · Claude Code · agentes sobre LLM (Llama, Qwen, Mistral, vía Groq y modelos locales) · function calling y flujos JSON validados · RAG y extracción documental · control de alucinación con golden sets
+
 **Herramientas** · Obsidian como base de conocimiento · Linux (Arch/Hyprland) · Docker · sandboxing con bwrap · CI/CD
 
 ---
