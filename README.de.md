@@ -104,9 +104,12 @@ Die Aufzeichnungen zu jedem Projekt pflege ich in eigenen Datenbanken, mit einem
 ## Stack
 
 **Sprachen** · Python · Java · SQL · Bash
+
 **Plattformen** · Odoo (Modelle, ORM, QWeb, OWL) · PostgreSQL · n8n · systemd
 **Integration** · XML-RPC · REST · SOAP · Webhooks · Meta Graph API · amtliche Dateien mit fester Satzlänge
+
 **Angewandte KI** · Claude Code · LLM-basierte Agenten (Llama, Qwen, Mistral, über Groq und lokale Modelle) · Function Calling und validierte JSON-Abläufe · RAG und Dokumentenextraktion · Halluzinationskontrolle mit Golden Sets
+
 **Werkzeuge** · Obsidian als Wissensbasis · Linux (Arch/Hyprland) · Docker · Sandboxing mit bwrap · CI/CD
 
 ---
