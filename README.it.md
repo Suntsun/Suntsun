@@ -104,10 +104,14 @@ Tengo traccia di ogni progetto nei miei database, con un sistema RAG personale c
 ## Stack
 
 **Linguaggi** · Python · Java · SQL · Bash
+
 **Piattaforme** · Odoo (modelli, ORM, QWeb, OWL) · PostgreSQL · n8n · systemd
+
 **Integrazione** · XML-RPC · REST · SOAP · Webhook · Meta Graph API · file ufficiali a larghezza fissa
+
 **IA applicata** · Claude Code · agenti basati su LLM (Llama, Qwen, Mistral, tramite Groq e modelli locali) · function calling e flussi JSON convalidati · RAG ed estrazione documentale · controllo delle allucinazioni con golden set
-**Strumenti** · Obsidian come base di conoscenza · Linux (Arch/Hyprland) · Docker · sandboxing con bwrap · CI/CD
+
+**Work tools** · Obsidian come base di conoscenza · Linux (Arch/Hyprland) · Docker · sandboxing con bwrap · CI/CD
 
 ---
 
