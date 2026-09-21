@@ -76,6 +76,22 @@ Verified end to end with real published posts.
 
 ---
 
+### 🌤️ Sunny — an assistant that operates the computer without controlling it
+
+You type what you want done — move some files, find empty documents, open a program — and it does it. All on the machine itself; no data leaves it.
+
+It is El Castillo's idea applied to the desktop. The model understands the request and plans, but touches nothing: it returns a JSON plan that is validated against a closed list of actions, and only then does anything run. If an action deletes or overwrites, it asks first.
+
+To read the screen it uses real OCR, not a vision model. A vision model can describe text that isn't in the image, and that invention would turn into a real action on your files. I would rather lose flexibility than delete the wrong file.
+
+Five model providers behind a single interface (Ollama locally, Groq, Cerebras, Anthropic, Gemini), with a fallback chain that tells a passing failure from a final one.
+
+Python · 786 tests on Windows, its native platform · 622 green when the suite is reproduced on Linux, where the 15 remaining failures are Windows-specific system calls
+
+[See the code](https://github.com/Suntsun/sunny) · [Case study](https://github.com/Suntsun/sunny-rpa-local)
+
+---
+
 ### ⚙️ Captain system — multi-agent orchestration
 
 A command layer coordinating more than 15 specialised agents, each with a single responsibility: one builds, one tests as a real user, one audits hunting for faults, one reviews the code.

@@ -76,6 +76,22 @@ Verificado de principio a fin con publicaciones reales.
 
 ---
 
+### 🌤️ Sunny — un asistente que maneja el ordenador sin controlarlo
+
+Le escribes lo que quieres hacer —mover unos archivos, buscar documentos vacíos, abrir un programa— y lo hace. Todo en el propio equipo, sin que salga ningún dato.
+
+Es la idea de El Castillo llevada al escritorio. El modelo entiende la orden y planifica, pero no toca nada: devuelve un plan en JSON que se valida contra una lista cerrada de acciones, y solo entonces se ejecuta. Si alguna acción borra o sobrescribe, pregunta antes.
+
+Para leer la pantalla usa OCR de verdad, no un modelo de visión. Un modelo de visión puede describirte texto que no está en la imagen, y esa invención se convertiría en una acción real sobre tus archivos. Prefiero perder flexibilidad antes que borrar el archivo equivocado.
+
+Cinco proveedores de modelo detrás de una misma interfaz (Ollama en local, Groq, Cerebras, Anthropic, Gemini), con una cadena de reserva que distingue el fallo pasajero del definitivo.
+
+Python · 786 tests en Windows, su plataforma nativa · 622 en verde al reproducir la suite en Linux, donde los 15 fallos restantes son llamadas propias de Windows
+
+[Ver el código](https://github.com/Suntsun/sunny) · [Caso de estudio](https://github.com/Suntsun/sunny-rpa-local)
+
+---
+
 ### ⚙️ Sistema Captain — orquestación multiagente
 
 Una capa de mando que coordina más de 15 agentes especializados, cada uno con una sola responsabilidad: uno construye, otro prueba como usuario real, otro audita buscando fallos, otro revisa el código.
